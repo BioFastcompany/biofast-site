@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BioFast — Instant Health Analysis</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0;
+      background-color: #f7f9fb;
+      color: #333;
+    }
+    header {
+      background-color: #0077b6;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      position: relative;
+    }
+    header img {
+      max-width: 120px;
+    }
+    .lang-switch {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: white;
+      color: #0077b6;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    h2 {
+      color: #0077b6;
+    }
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .feature {
+      flex: 1 1 250px;
+      background: white;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .image-block {
+      text-align: center;
+      margin: 30px 0;
+    }
+    .image-block img {
+      max-width: 100%;
+      border-radius: 15px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .pro-section {
+      margin-top: 50px;
+      padding: 30px;
+      background: #eef5fb;
+      border-radius: 10px;
+    }
+    form {
+      margin-top: 40px;
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    button {
+      background-color: #0077b6;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #e0e0e0;
+      font-size: 0.9em;
+    }
+    /* Modal styles */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+    }
+    .modal-content {
+      background: #fff;
+      margin: 10% auto;
+      padding: 20px;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 10px;
+      text-align: left;
+    }
+    .close {
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="lang-switch" id="langSwitch">RU</button>
+    <img src="images/biofast-logo.png" alt="BioFast Logo">
+    <h1 id="title">BioFast — Your Personal Health Analyzer</h1>
+    <p id="subtitle">Instant blood analysis with AI-powered nutrition, fitness and fasting recommendations</p>
+  </header>
+
+  <main>
+    <!-- BioFast Basic -->
+    <h2 id="whatTitle">What is BioFast?</h2>
+    <p id="whatDesc"><strong>BioFast</strong> is a compact home device that analyzes a single drop of blood to detect essential biomarkers (glucose, ketones, iron, C-reactive protein, and more) and uses artificial intelligence to provide personalized recommendations for nutrition, fitness, and intermittent fasting. Perfect for people who care about health, weight control, and disease prevention.</p>
+
+    <div class="image-block">
+      <img src="images/biofast-image.jpg" alt="BioFast Device">
+    </div>
+
+    <h2 id="featuresTitle">BioFast Features</h2>
+    <div class="features">
+      <div class="feature" id="feat1">🔬 Blood biomarker analysis from a single drop</div>
+      <div class="feature" id="feat2">🤖 AI-driven personalized health recommendations</div>
+      <div class="feature" id="feat3">📱 Mobile app synchronization</div>
+      <div class="feature" id="feat4">⏱️ Fast results in under 2 minutes</div>
+    </div>
+
+    <button id="openModal">More Details</button>
+
+    <!-- BioFast Pro 2 -->
+    <div class="pro-section">
+      <h2 id="proTitle">Introducing BioFast Pro 2</h2>
+      <p id="proDesc">BioFast Pro 2 is an advanced device with an integrated automatic finger prick and internal test strip loading. It collects the blood sample, analyzes it inside the device, and provides instant biomarker results with AI-powered recommendations—all fully automated.</p>
+      <div class="image-block">
+        <img src="images/biofast-pro2.jpg" alt="BioFast Pro 2">
+      </div>
+      <button id="openModalPro">Details</button>
+    </div>
+
+    <!-- Contact form -->
+    <form action="https://formspree.io/f/xeozgenb" method="POST">
+      <h2 id="contactTitle">Contact Us</h2>
+      <p id="contactDesc">Leave your details — we’ll notify you when pre-orders start:</p>
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="_replyto" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit" id="contactBtn">Send</button>
+    </form>
+  </main>
+
+  <footer>
+    © 2025 BioFast. <span id="footerText">All rights reserved.</span><br>
+    📧 biofastsuport@gmail.com
+  </footer>
+
+  <!-- Modal Basic -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h2 id="modalTitle">Detailed Information</h2>
+      <p id="modalText">BioFast uses advanced biosensor technology to analyze multiple biomarkers including glucose, ketones, iron, and C-reactive protein. With AI algorithms, it creates personalized nutrition, fitness, and fasting plans tailored to your health goals. The device syncs with a mobile app, providing historical tracking and trends, making it ideal for preventive health monitoring at home.</p>
+    </div>
+  </div>
+
+  <!-- Modal Pro 2 -->
+  <div id="myModalPro" class="modal">
+    <div class="modal-content">
+      <span class="close" id="closePro">&times;</span>
+      <h2 id="modalTitlePro">BioFast Pro 2 — Advanced Details</h2>
+      <p id="modalTextPro">BioFast Pro 2 takes automation to the next level. The device features an integrated auto-lancet system for painless finger pricks and automatically loads the sample onto an internal smart strip. The biomarkers are read directly inside the device, and AI immediately generates a comprehensive health report with tailored recommendations. No manual steps required—just insert your finger and let the device do the rest.</p>
+    </div>
+  </div>
+
+  <script>
+  // Modal logic Basic
+  var modal = document.getElementById("myModal");
+  var btn = document.getElementById("openModal");
+  var span = document.getElementsByClassName("close")[0];
+  btn.onclick = function() { modal.style.display = "block"; }
+  span.onclick = function() { modal.style.display = "none"; }
+
+  // Modal logic Pro 2
+  var modalPro = document.getElementById("myModalPro");
+  var btnPro = document.getElementById("openModalPro");
+  var spanPro = document.getElementById("closePro");
+  btnPro.onclick = function() { modalPro.style.display = "block"; }
+  spanPro.onclick = function() { modalPro.style.display = "none"; }
+
+  window.onclick = function(event) {
+    if (event.target == modal) modal.style.display = "none";
+    if (event.target == modalPro) modalPro.style.display = "none";
+  }
+
+  // Language switcher
+  const langSwitch = document.getElementById("langSwitch");
+  let currentLang = "EN";
+
+  const texts = {
+    EN: {
+      title: "BioFast — Your Personal Health Analyzer",
+      subtitle: "Instant blood analysis with AI-powered nutrition, fitness and fasting recommendations",
+      whatTitle: "What is BioFast?",
+      whatDesc: "<strong>BioFast</strong> is a compact home device that analyzes a single drop of blood to detect essential biomarkers (glucose, ketones, iron, C-reactive protein, and more) and uses artificial intelligence to provide personalized recommendations for nutrition, fitness, and intermittent fasting. Perfect for people who care about health, weight control, and disease prevention.",
+      featuresTitle: "BioFast Features",
+      feat1: "🔬 Blood biomarker analysis from a single drop",
+      feat2: "🤖 AI-driven personalized health recommendations",
+      feat3: "📱 Mobile app synchronization",
+      feat4: "⏱️ Fast results in under 2 minutes",
+      openModal: "More Details",
+      proTitle: "Introducing BioFast Pro 2",
+      proDesc: "BioFast Pro 2 is an advanced device with an integrated automatic finger prick and internal test strip loading. It collects the blood sample, analyzes it inside the device, and provides instant biomarker results with AI-powered recommendations—all fully automated.",
+      openModalPro: "Details",
+      contactTitle: "Contact Us",
+      contactDesc: "Leave your details — we’ll notify you when pre-orders start:",
+      contactBtn: "Send",
+      footerText: "All rights reserved.",
+      modalTitle: "Detailed Information",
+      modalText: "BioFast uses advanced biosensor technology to analyze multiple biomarkers including glucose, ketones, iron, and C-reactive protein. With AI algorithms, it creates personalized nutrition, fitness, and fasting plans tailored to your health goals. The device syncs with a mobile app, providing historical tracking and trends, making it ideal for preventive health monitoring at home.",
+      modalTitlePro: "BioFast Pro 2 — Advanced Details",
+      modalTextPro: "BioFast Pro 2 takes automation to the next level. The device features an integrated auto-lancet system for painless finger pricks and automatically loads the sample onto an internal smart strip. The biomarkers are read directly inside the device, and AI immediately generates a comprehensive health report with tailored recommendations. No manual steps required—just insert your finger and let the device do the rest."
+    },
+    RU: {
+      title: "BioFast — Ваш персональный анализатор здоровья",
+      subtitle: "Мгновенный анализ крови и рекомендации по питанию, спорту и голоданию с помощью ИИ",
+      whatTitle: "Что такое BioFast?",
+      whatDesc: "<strong>BioFast</strong> — это компактное домашнее устройство, которое анализирует каплю крови, определяя важные биомаркеры (глюкоза, кетоны, железо, С-реактивный белок и др.), и с помощью искусственного интеллекта даёт персональные рекомендации по питанию, спорту и интервальному голоданию. Идеально для тех, кто заботится о здоровье, контроле веса и профилактике заболеваний.",
+      featuresTitle: "Возможности BioFast",
+      feat1: "🔬 Анализ биомаркеров из капли крови",
+      feat2: "🤖 Искусственный интеллект для персональных рекомендаций",
+      feat3: "📱 Синхронизация с мобильным приложением",
+      feat4: "⏱️ Быстрые результаты за 2 минуты",
+      openModal: "Подробная информация",
+      proTitle: "Представляем BioFast Pro 2",
+      proDesc: "BioFast Pro 2 — это усовершенствованное устройство с встроенным автоматическим проколом пальца и внутренней загрузкой тест-полоски. Оно собирает образец крови, анализирует его внутри устройства и сразу предоставляет результаты биомаркеров с рекомендациями ИИ — полностью автоматически.",
+      openModalPro: "Детали",
+      contactTitle: "Связаться с нами",
+      contactDesc: "Оставьте свои контакты — мы уведомим вас, когда начнётся предзаказ:",
+      contactBtn: "Отправить",
+      footerText: "Все права защищены.",
+      modalTitle: "Подробная информация",
+      modalText: "BioFast использует передовые биосенсорные технологии для анализа нескольких биомаркеров, включая глюкозу, кетоны, железо и С-реактивный белок. С помощью алгоритмов ИИ создаются персональные планы питания, тренировок и голодания, адаптированные под ваши цели. Устройство синхронизируется с мобильным приложением, обеспечивая исторический анализ и тенденции, что делает его идеальным для профилактического контроля здоровья дома.",
+      modalTitlePro: "BioFast Pro 2 — Подробности",
+      modalTextPro: "BioFast Pro 2 выводит автоматизацию на новый уровень. Устройство оснащено встроенной авто-ланцетной системой для безболезненного прокола пальца и автоматически загружает образец на внутреннюю умную полоску. Биомаркеры считываются непосредственно внутри устройства, а ИИ мгновенно генерирует подробный отчёт о здоровье с индивидуальными рекомендациями. Никаких ручных действий — просто вставьте палец и дайте устройству сделать всё остальное."
+    }
+  };
+
+  function switchLang() {
+    currentLang = (currentLang === "EN") ? "RU" : "EN";
+    const t = texts[currentLang];
+    document.getElementById("title").innerHTML = t.title;
+    document.getElementById("subtitle").innerHTML = t.subtitle;
+    document.getElementById("whatTitle").innerHTML = t.whatTitle;
+    document.getElementById("whatDesc").innerHTML = t.whatDesc;
+    document.getElementById("featuresTitle").innerHTML = t.featuresTitle;
+    document.getElementById("feat1").innerHTML = t.feat1;
+    document.getElementById("feat2").innerHTML = t.feat2;
+    document.getElementById("feat3").innerHTML = t.feat3;
+    document.getElementById("feat4").innerHTML = t.feat4;
+    document.getElementById("openModal").innerHTML = t.openModal;
+    document.getElementById("proTitle").innerHTML = t.proTitle;
+    document.getElementById("proDesc").innerHTML = t.proDesc;
+    document.getElementById("openModalPro").innerHTML = t.openModalPro;
+    document.getElementById("contactTitle").innerHTML = t.contactTitle;
+    document.getElementById("contactDesc").innerHTML = t.contactDesc;
+    document.getElementById("contactBtn").innerHTML = t.contactBtn;
+    document.getElementById("footerText").innerHTML = t.footerText;
+    document.getElementById("modalTitle").innerHTML = t.modalTitle;
+    document.getElementById("modalText").innerHTML = t.modalText;
+    document.getElementById("modalTitlePro").innerHTML = t.modalTitlePro;
+    document.getElementById("modalTextPro").innerHTML = t.modalTextPro;
+    langSwitch.innerText = (currentLang === "EN") ? "RU" : "EN";
+  }
+
+  langSwitch.addEventListener("click", switchLang);
+  </script>
+</body>
+</html>
